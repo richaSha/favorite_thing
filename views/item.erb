@@ -1,0 +1,12 @@
+<a href="/">Go Back</a>
+<h1><%= @item.name  %></h1>
+<p><%= @item.description  %></p>
+<form class="" action="/edit/<%= @item.id%>" method="post">
+  <div class="input-group">
+    <span class="input-group-addon">New Name</span>
+    <input type="text" class="form-control" name="new_name" placeholder="New Name">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary" >Edit</button>
+  <button type="button" class="btn " ><a href="/delete/<%= @item.id%>">Delete</a></button>
+</form>

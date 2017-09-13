@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h2>Favorite Place list</h2>
+  <ol type="1">
+  <% if @lists %>
+    <% @lists.each do |item|%>
+      <li><a href="/list/<%=item.id%>"><%= item.name%></a></li>
+    <%end%>
+  <%end%>
+</ol>
+</div>
+
+<div class="alert alert-danger">
+  <strong> <%= @error %></strong>
+</div>
+<form action="/" method="post">
+  <div class="input-group">
+    <span class="input-group-addon">Name</span>
+    <input type="text" class="form-control" name="place_name" placeholder="Favorite Place">
+  </div>
+  <br>
+  <div class="input-group">
+    <span class="input-group-addon">Ranking</span>
+    <input type="number" class="form-control" name="rank" placeholder="Ranking">
+  </div>
+  <br>
+  <div class="input-group">
+    <span class="input-group-addon">About Place</span>
+    <textarea class="form-control" rows="5" name="about_place"></textarea>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
